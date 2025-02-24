@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Plugin (Slick)</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+    />
+
+    <script src="assets/js/jQuery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title">Slick Carousel</h2>
+
+      <script>
+        jQuery(document).ready(function () {
+          /* carousel/ auto slider */
+          $(".slider").slick({
+            autoplay: true,
+            autoplaySpeed: 1000,
+            dots: true,
+            prevArrow: "<i class='bx bxs-left-arrow'></i>",
+            nextArrow: "<i class='bx bxs-right-arrow' ></i>",
+          });
+
+          /* logo carousel */
+          $(".logo-carousel").slick({
+            autoplay: false,
+            autoplaySpeed: 1000,
+            dots: true,
+            arrows: false,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          });
+
+          /* lazy load */
+          $(".lazy-load").slick({
+            autoplay: true,
+            autoplaySpeed: 500,
+            lazyLoad: "ondemand",
+            dots: true,
+            arrows: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          });
+
+          /* outer mode */
+          $(".outer-carousel").slick({
+            centerMode: true, // মাঝের স্লাইড বড় হবে
+            centerPadding: "60px", // পাশের স্লাইডগুলো কতটা ভিজিবল থাকবে
+            slidesToShow: 3,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            prevArrow: "<i class='bx bxs-left-arrow'></i>",
+            nextArrow: "<i class='bx bxs-right-arrow' ></i>",
+            arrows: true,
+          });
+
+          /* fade mode */
+          $(".fade").slick({
+            dots: true,
+            infinite: true,
+            speed: 1000,
+            fade: true,
+            cssEase: "linear",
+            prevArrow: "<i class='bx bxs-left-arrow'></i>",
+            nextArrow: "<i class='bx bxs-right-arrow' ></i>",
+          });
+
+          /* slider syncing */
+          $(".slider-for").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: ".slider-nav", // Thumbnail Slider এর সাথে Sync হবে
+          });
+
+          $(".slider-nav").slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: ".slider-for", // Main Slider এর সাথে Sync হবে
+            dots: false,
+            centerMode: false,
+            variableWidth: false,
+            focusOnSelect: true,
+            prevArrow: "<i class='bx bxs-left-arrow'></i>",
+            nextArrow: "<i class='bx bxs-right-arrow' ></i>",
+          });
+        });
+      </script>
+
+      <!-- carousel/slider -->
+
+      <h3>Autoplay Carousel/Slider</h3>
+      <div class="slider">
+        <div class="single-slider-item-wrapper">
+          <div class="single-slide-item slide-first">
+            <h1>Slide 1</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis facere nostrum saepe distinctio. Dolores tempore,
+              ipsa eveniet natus dolorem qui.
+            </p>
+            <a href="" class="btn">Learn More</a>
+          </div>
+        </div>
+        <div class="single-slider-item-wrapper">
+          <div class="single-slide-item slide-second">
+            <h1>Slide 2</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis facere nostrum saepe distinctio. Dolores tempore,
+              ipsa eveniet natus dolorem qui.
+            </p>
+            <a href="" class="btn">Learn More</a>
+          </div>
+        </div>
+        <div class="single-slider-item-wrapper">
+          <div class="single-slide-item slide-third">
+            <h1>Slide 3</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis facere nostrum saepe distinctio. Dolores tempore,
+              ipsa eveniet natus dolorem qui.
+            </p>
+            <a href="" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- logo-carousel -->
+      <h3>Logo Carousel</h3>
+      <div class="logo-carousel">
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img src="./assets/img/1696664690316.jpg" alt="" />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img src="./assets/img/Emblem_of_Hamas.svg.png" alt="" />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img src="./assets/img/Al-Qassam_Brigades.png" alt="" />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img
+              src="./assets/img/flat-design-fist-to-free-palestine-free-vector.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img
+              src="./assets/img/free-palestine-logo-free-vector.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img src="./assets/img/images.png" alt="" />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img
+              src="./assets/img/palestine-support-logo-icon-design-vector-illustration_757387-5020.avif"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img
+              src="./assets/img/pngtree-national-day-of-palestine-with-simple-heart-shape-png-image_5526789.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img
+              src="./assets/img/pngtree-palestine-flag-transparent-with-watercolor-paint-brush-and-fist-png-image_6296786.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="single-logo-carousel-wrapper">
+          <div class="single-logo-carousel">
+            <img src="./assets/img/Wiki-Palestine-logo.svg.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- lazy-load -->
+      <h3>Lazy Load Carousel</h3>
+      <div class="lazy-load">
+        <div class="lazy-slider-item-wrapper">
+          <div class="lazy-slider-item">
+            <img src="./assets/img/Wiki-Palestine-logo.svg.png" alt="" />
+          </div>
+        </div>
+        <div class="lazy-slider-item-wrapper">
+          <div class="lazy-slider-item">
+            <img
+              src="./assets/img/pngtree-palestine-flag-transparent-with-watercolor-paint-brush-and-fist-png-image_6296786.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="lazy-slider-item-wrapper">
+          <div class="lazy-slider-item">
+            <img
+              src="./assets/img/pngtree-national-day-of-palestine-with-simple-heart-shape-png-image_5526789.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="lazy-slider-item-wrapper">
+          <div class="lazy-slider-item">
+            <img src="./assets/img/Al-Qassam_Brigades.png" alt="" />
+          </div>
+        </div>
+        <div class="lazy-slider-item-wrapper">
+          <div class="lazy-slider-item">
+            <img
+              src="./assets/img/palestine-support-logo-icon-design-vector-illustration_757387-5020.avif"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="lazy-slider-item-wrapper">
+          <div class="lazy-slider-item">
+            <img
+              src="./assets/img/free-palestine-logo-free-vector.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="lazy-slider-item-wrapper">
+          <div class="lazy-slider-item">
+            <img src="./assets/img/images.png" alt="" />
+          </div>
+        </div>
+        <div class="lazy-slider-item-wrapper">
+          <div class="lazy-slider-item">
+            <img
+              src="./assets/img/flat-design-fist-to-free-palestine-free-vector.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- outer-mode -->
+      <h3>Outer Mode Carousel</h3>
+      <div class="outer-carousel">
+        <div><img src="./assets/img/Palestine_Flag.png" alt="Slide 1" /></div>
+        <div>
+          <img src="./assets/img/Al-Qassam_Brigades.png" alt="Slide 2" />
+        </div>
+        <div>
+          <img
+            src="./assets/img/flat-design-fist-to-free-palestine-free-vector.jpg"
+            alt="Slide 3"
+          />
+        </div>
+        <div>
+          <img
+            src="./assets/img/free-palestine-logo-free-vector.jpg"
+            alt="Slide 4"
+          />
+        </div>
+        <div>
+          <img
+            src="./assets/img/pngtree-national-day-of-palestine-with-simple-heart-shape-png-image_5526789.jpg"
+            alt="Slide 5"
+          />
+        </div>
+      </div>
+
+      <!-- fade -->
+      <h3>Fade Mode Carousel</h3>
+      <div class="fade">
+        <div class="single-slider-item-wrapper">
+          <div class="single-slide-item slide-first">
+            <h1>Slide 1</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis facere nostrum saepe distinctio. Dolores tempore,
+              ipsa eveniet natus dolorem qui.
+            </p>
+            <a href="" class="btn">Learn More</a>
+          </div>
+        </div>
+        <div class="single-slider-item-wrapper">
+          <div class="single-slide-item slide-second">
+            <h1>Slide 2</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis facere nostrum saepe distinctio. Dolores tempore,
+              ipsa eveniet natus dolorem qui.
+            </p>
+            <a href="" class="btn">Learn More</a>
+          </div>
+        </div>
+        <div class="single-slider-item-wrapper">
+          <div class="single-slide-item slide-third">
+            <h1>Slide 3</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis facere nostrum saepe distinctio. Dolores tempore,
+              ipsa eveniet natus dolorem qui.
+            </p>
+            <a href="" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- slider syncing -->
+      <h3>Slider Syncing Carousel</h3>
+      <div class="slider-for">
+        <div>
+          <img
+            src="./assets/img/Slide-syncing/david-mclenachan-11kQ2vLtjE8-unsplash.jpg"
+            alt="Slide 1"
+          />
+        </div>
+        <div>
+          <img
+            src="./assets/img/Slide-syncing/jorge-fernandez-salas-LPyjvxWdCW0-unsplash.jpg"
+            alt="Slide 2"
+          />
+        </div>
+        <div>
+          <img
+            src="./assets/img/Slide-syncing/nour-tayeh-_E5XyiIIpxg-unsplash.jpg"
+            alt="Slide 3"
+          />
+        </div>
+        <div>
+          <img
+            src="./assets/img/Slide-syncing/nour-tayeh-SfrQKboLGHA-unsplash.jpg"
+            alt="Slide 3"
+          />
+        </div>
+        <div>
+          <img
+            src="./assets/img/Slide-syncing/nour-tayeh-OvMrEg_tAvg-unsplash.jpg"
+            alt="Slide 3"
+          />
+        </div>
+      </div>
+
+      <div class="slider-nav">
+        <div>
+            <img
+              src="./assets/img/Slide-syncing/david-mclenachan-11kQ2vLtjE8-unsplash.jpg"
+              alt="Thumbnail 1"
+            />
+        </div>
+        <div>
+            <img
+              src="./assets/img/Slide-syncing/jorge-fernandez-salas-LPyjvxWdCW0-unsplash.jpg"
+              alt="Thumbnail 2"
+            />
+        </div>
+        <div>
+            <img
+              src="./assets/img/Slide-syncing/nour-tayeh-_E5XyiIIpxg-unsplash.jpg"
+              alt="Thumbnail 3"
+            />
+        </div>
+        <div>
+            <img
+              src="./assets/img/Slide-syncing/nour-tayeh-SfrQKboLGHA-unsplash.jpg"
+              alt="Thumbnail 3"
+            />
+        </div>
+        <div>
+            <img
+              src="./assets/img/Slide-syncing/nour-tayeh-OvMrEg_tAvg-unsplash.jpg"
+              alt="Thumbnail 3"
+            />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

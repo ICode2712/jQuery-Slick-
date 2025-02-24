@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+a{
+    color: #0f1cf6;
+    text-decoration: none;
+}
+
+body{
+    line-height: 1.5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0 0 15px;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.title{
+    font-size: 56px;
+    font-weight: 800;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.slider,
+.logo-carousel,
+.lazy-load,
+.outer-mode,
+.fade{
+    margin-bottom: 40px;
+}
+
+.single-slider-item-wrapper{
+    width: 100%;
+    height: 400px;
+}
+
+.single-slide-item {
+    color: #fff;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-first{
+    background-image: url(../img/Palestine_Flag.png);
+}
+
+.slide-second {
+    background-image: url(../img/1246613243.jpeg);
+}
+
+.slide-third{
+    background-image: url(../img/pngtree-aerial-view-of-the-old-city-with-the-dome-of-the-picture-image_2733962.jpg);
+}
+
+.single-slide-item:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    background: #000;
+    z-index: -1;
+    opacity: .6;
+}
+
+a.btn{
+    display: inline-block;
+    padding: 10px 15px;
+    background: blue;
+    color: #fff;
+    border-radius: 5px ;
+}
+
+.bxs-left-arrow{
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    margin-top: -40px;
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bxs-right-arrow{
+    position: absolute;
+    left: auto;
+    right: -40px;
+    top: 50%;
+    margin-top: -40px;
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+ul.slick-dots button {
+    display: none;
+}
+
+ul.slick-dots{
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+}
+
+ul.slick-dots li{
+    height: 10px;
+    width: 10px;
+    background-color: blue;
+    border-radius: 50%;
+    margin: 5px ;
+}
+
+ul.slick-dots li.slick-active{
+    background-color: #000;
+}
+
+.logo-carousel ul.slick-dots li{
+    background-color: red
+}
+
+.logo-carousel ul.slick-dots li.slick-active{
+    background-color: blue;
+}
+
+.single-logo-carousel{
+    padding: 0 10px ;
+}
+
+.logo-carousel .slick-list,
+.lazy-load .slick-list{
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.lazy-load ul.slick-dots li{
+    background-color: yellowgreen;
+}
+
+.lazy-slider-item{
+    padding: 0 10px;
+}
+
+.outer-carousel {
+    width: 100%;
+    height: 400px;
+    margin: auto;
+}
+
+.outer-carousel .slick-slide {
+    transform: scale(0.8); /* পাশের স্লাইডগুলোর সাইজ ছোট করা */
+    transition: all 0.3s ease;
+    opacity: 0.6; /* পাশের স্লাইডগুলো কিছুটা ফেইড করা */
+}
+
+.outer-carousel .slick-center {
+    transform: scale(1); /* মাঝের স্লাইড বড় থাকবে */
+    opacity: 1;
+}
+
+.slider-for img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider-nav img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider-nav {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.slider-nav .slick-slide {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.slider-nav .slick-current {
+    opacity: 1;
+    border: 2px solid #000;
+}
+
